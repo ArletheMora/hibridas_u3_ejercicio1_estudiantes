@@ -8,8 +8,19 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'new-student', //home
     pathMatch: 'full'
+  },
+  {
+    path: 'perfil',
+    children:[{
+      path: ":controlnumber",
+      loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+    }]
+  },
+  {
+    path: 'new-student',
+    loadChildren: () => import('./new-student/new-student.module').then( m => m.NewStudentPageModule)
   },
 ];
 
