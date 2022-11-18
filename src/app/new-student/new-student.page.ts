@@ -86,6 +86,4 @@ export class NewStudentPage implements OnInit {
     this.studentService.newStudent(this.student);
   }
 
-
-
 }

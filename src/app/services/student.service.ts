@@ -6,6 +6,7 @@ import { pickerController } from '@ionic/core';
   providedIn: 'root'
 })
 export class StudentService {
+  
   //var     //tipoDato
   private Students: Student[];
 
@@ -76,5 +77,9 @@ export class StudentService {
   public newStudent(student: Student):void{
     /* El push solo se puede usar cuando está inicializado el arreglo */
     this.Students.push(student);
+  }
+
+  updateStudent(student: Student, i: number) {
+    this.Students[i] = student;
   }
 }
