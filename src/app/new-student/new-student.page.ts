@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { StudentService } from './../services/student.service';
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../models/student';
@@ -13,7 +14,7 @@ export class NewStudentPage implements OnInit {
   public myForm: FormGroup;
   public validationMessages: Object;
 
-  constructor(private studentService: StudentService, private fb: FormBuilder) { }
+  constructor(private studentService: StudentService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
 
@@ -51,9 +52,9 @@ export class NewStudentPage implements OnInit {
       ]
       ,
       curp: [
-        { type: 'required', message: "Nombre obligatorio" },
-        { type: 'minlength', message: "Debe ser de 18 dígitos" },
-        { type: 'maxlength', message: "Debe ser de 18 dígitos" },
+        { type: 'required', message: "CURP obligatorio" },
+        { type: 'minlength', message: "Debe ser de 18 caracteres" },
+        { type: 'maxlength', message: "Debe ser de 18 caracteres" },
         { type: 'pattern', message: "La CURP está mal formada" }
       ]
       ,
@@ -83,7 +84,18 @@ export class NewStudentPage implements OnInit {
 
   public newStudent(): void {
     //Construir el objeto
+    this.student = {
+      controlnumber: this.myForm.get('controlnumber').value,
+      name: this.myForm.get('name').value,
+      curp: this.myForm.get('curp').value,
+      age: this.myForm.get('age').value,
+      nip: this.myForm.get('nip').value,
+      email: this.myForm.get('email').value,
+      career: this.myForm.get('carreer').value,
+      photo: this.myForm.get('photo').value,
+    }
     this.studentService.newStudent(this.student);
+    this.router.navigate(['/home']);
   }
 
 }

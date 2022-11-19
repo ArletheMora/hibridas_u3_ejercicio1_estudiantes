@@ -17,7 +17,7 @@ export class StudentService {
         age: 22,
         career: "ISC",
         curp: "MOLA",
-        email: "armomorali",
+        email: "armomorali@ittepic.edu.mx",
         name: "Arlethe Monserrat Mora Lizarrarás",
         nip: 123,
         photo: "https://picsum.photos/id/111/600/600"
@@ -27,7 +27,7 @@ export class StudentService {
         age: 22,
         career: "ISC",
         curp: "JUPA",
-        email: "jupacamposca",
+        email: "jupacamposca@ittepic.edu.mx",
         name: "Juan Pablo",
         nip: 123,
         photo: "https://picsum.photos/id/102/600/600"
@@ -37,8 +37,8 @@ export class StudentService {
         age: 22,
         career: "ISC",
         curp: "MOLA",
-        email: "armomorali",
-        name: "Arlethe Monserrat Mora Lizarrarás",
+        email: "aljumorali@ittepic.edu.mx",
+        name: "Alondra Juliette",
         nip: 123,
         photo: "https://picsum.photos/600/?random=1"
       }
