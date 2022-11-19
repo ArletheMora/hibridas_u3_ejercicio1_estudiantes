@@ -13,11 +13,8 @@
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-label position="floating"> Número de control </ion-label>
-            <ion-input
-              formControlName="controlnumber"
-              placeholder="Número de control"
-            ></ion-input>
+            <ion-label position="stacked"> Número de control </ion-label>
+            <ion-input formControlName="controlnumber"></ion-input>
           </ion-item>
           <div>
             <ng-container
@@ -65,7 +62,6 @@
           </ion-select>
         </ion-item>
       </ion-col>
-
 
       <ion-row>
         <ion-col>
@@ -161,7 +157,12 @@
           </div>
         </ion-col>
       </ion-row>
-      <ion-button (click)="updateStudent()" expand="block" fill="clear" shape="round">
+      <ion-button
+        (click)="updateStudent()"
+        expand="block"
+        fill="clear"
+        shape="round"
+      >
         Guardar
       </ion-button>
     </form>
