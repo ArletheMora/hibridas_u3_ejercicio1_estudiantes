@@ -153,8 +153,19 @@ export class UpdateStudentPage implements OnInit {
 
     for (let i = 0; i < this.students.length; i++) {
       console.log(this.student[i])
+      console.log(this.student)
       if (this.students[i].controlnumber.includes(this.student.controlnumber)) {
-        console.log('actualizado');
+         this.student = {
+          controlnumber: this.student.controlnumber,
+          name: this.myForm.get('name').value,
+          curp: this.myForm.get('curp').value,
+          age: this.myForm.get('age').value,
+          nip: this.myForm.get('nip').value,
+          email: this.myForm.get('email').value,
+          career: this.myForm.get('carreer').value,
+          photo: this.myForm.get('photo').value,
+        }
+        console.log('existe');
         this.studentService.updateStudent(this.student, i);
         this.router.navigate(['/home']);
       } else {
